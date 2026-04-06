@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kings Exclusive Laundry</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Pro Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-<header>
-  <h1>Kings Exclusive Laundry 🧺</h1>
-  <p>Clean. Fast. Reliable.</p>
-</header>
+<div class="sidebar">
+    <h2>ProPanel</h2>
+    <ul>
+        <li onclick="showSection('dashboard')">Dashboard</li>
+        <li onclick="showSection('customers')">Customers</li>
+        <li onclick="toggleTheme()">Toggle Theme</li>
+        <li onclick="logout()">Logout</li>
+    </ul>
+</div>
 
-<section class="hero">
-  <h2>We Make Your Clothes Look Brand New</h2>
-  <p>Professional laundry services at affordable prices</p>
-  <a href="https://wa.me/2349030623053" class="btn">Chat on WhatsApp</a>
-</section>
+<div class="main">
 
-<section class="services">
-  <h2>Our Services</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Washing</h3>
-      <p>Deep cleaning for all clothes.</p>
+<!-- LOGIN -->
+<div id="loginPage" class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="content hidden">
+    <h1>Dashboard</h1>
+
+    <div class="cards">
+        <div class="card">💰 $15,200 Revenue</div>
+        <div class="card">📦 420 Orders</div>
+        <div class="card">👥 210 Customers</div>
     </div>
-    <div class="card">
-      <h3>Ironing</h3>
-      <p>Neat and perfect finishing.</p>
-    </div>
-    <div class="card">
-      <h3>Delivery</h3>
-      <p>Fast pickup and delivery.</p>
-    </div>
-  </div>
-</section>
 
-<section class="price">
-  <h2>Pricing</h2>
-  <p>₦1000 per trip</p>
-  <p>₦500 per item</p>
-</section>
+    <canvas id="myChart"></canvas>
+</div>
 
-<footer>
-  <p>Contact: 09030623053</p>
-</footer>
+<!-- CUSTOMERS -->
+<div id="customers" class="content hidden">
+    <h1>Customers</h1>
+    <input type="text" id="search" placeholder="Search..." onkeyup="searchCustomer()">
 
+    <table id="customerTable">
+        <tr><th>Name</th><th>Email</th></tr>
+        <tr><td>John Doe</td><td>john@email.com</td></tr>
+        <tr><td>Jane Smith</td><td>jane@email.com</td></tr>
+    </table>
+</div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
