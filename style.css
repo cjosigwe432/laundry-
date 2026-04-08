@@ -1,23 +1,24 @@
 body {
     margin: 0;
     font-family: Arial;
+    background: #0f172a;
+    color: white;
+}
+
+.app {
     display: flex;
-    transition: 0.3s;
 }
 
-/* Dark Mode */
-body.dark {
-    background: #121212;
-    color: white;
-}
-
-/* Sidebar */
+/* SIDEBAR */
 .sidebar {
-    width: 220px;
-    background: #111;
-    color: white;
+    width: 200px;
     height: 100vh;
+    background: #020617;
     padding: 20px;
+}
+
+.sidebar h2 {
+    color: #3b82f6;
 }
 
 .sidebar ul {
@@ -26,66 +27,58 @@ body.dark {
 }
 
 .sidebar li {
-    padding: 12px;
+    margin: 15px 0;
     cursor: pointer;
 }
 
-.sidebar li:hover {
-    background: #333;
-}
-
-/* Main */
+/* MAIN */
 .main {
     flex: 1;
     padding: 20px;
 }
 
-/* Login */
-.login-box {
-    max-width: 300px;
-    margin: 100px auto;
-    text-align: center;
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-/* Cards */
+/* CARDS */
 .cards {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .card {
-    flex: 1;
+    background: #1e293b;
     padding: 20px;
-    background: #f4f4f4;
     border-radius: 10px;
+    flex: 1;
 }
 
-/* Dark cards */
-body.dark .card {
-    background: #1e1e1e;
-}
-
-/* Table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-td, th {
-    border: 1px solid #ccc;
+/* INPUT */
+input {
+    display: block;
+    margin: 10px 0;
     padding: 10px;
+    width: 250px;
 }
 
-/* Hide */
+/* BUTTON */
+button {
+    padding: 10px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* DARK/LIGHT MODE */
+.light {
+    background: white;
+    color: black;
+}
+
 .hidden {
     display: none;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .sidebar {
-        display: none;
-    }
 }
